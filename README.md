@@ -22,10 +22,8 @@ with go swagger installed, you can run
 
     make client
 
-which regenerates the client. to update the api definition used, start a local IDB instance listening on `localhost:5000`. when the idb is started run
-
-    rm swagger_doc.json && make swagger_doc.json
+which regenerates the client.
 
 ## example
 
-an example how to fetch a list of machines can be found in `cmd/machines`.
+an example how to manage machine objects can be found in `cmd/machines`.

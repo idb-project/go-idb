@@ -12,10 +12,10 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Machine Searches machines with specific software configurations
-// swagger:model Machine
+// PostAPIV3Machines Create a new machine
+// swagger:model postApiV3Machines
 
-type Machine struct {
+type PostAPIV3Machines struct {
 
 	// Architecture
 	Arch string `json:"arch,omitempty"`
@@ -126,7 +126,7 @@ type Machine struct {
 	SeverityClass string `json:"severity_class,omitempty"`
 
 	// software
-	Software MachineSoftware `json:"software"`
+	Software PostAPIV3MachinesSoftware `json:"software"`
 
 	// Software characteristics
 	SwCharacteristics string `json:"sw_characteristics,omitempty"`
@@ -162,104 +162,104 @@ type Machine struct {
 	Vmhost string `json:"vmhost,omitempty"`
 }
 
-/* polymorph Machine arch false */
+/* polymorph postApiV3Machines arch false */
 
-/* polymorph Machine auto_update false */
+/* polymorph postApiV3Machines auto_update false */
 
-/* polymorph Machine backup_brand false */
+/* polymorph postApiV3Machines backup_brand false */
 
-/* polymorph Machine backup_last_diff_run false */
+/* polymorph postApiV3Machines backup_last_diff_run false */
 
-/* polymorph Machine backup_last_diff_size false */
+/* polymorph postApiV3Machines backup_last_diff_size false */
 
-/* polymorph Machine backup_last_full_run false */
+/* polymorph postApiV3Machines backup_last_full_run false */
 
-/* polymorph Machine backup_last_full_size false */
+/* polymorph postApiV3Machines backup_last_full_size false */
 
-/* polymorph Machine backup_last_inc_run false */
+/* polymorph postApiV3Machines backup_last_inc_run false */
 
-/* polymorph Machine backup_last_inc_size false */
+/* polymorph postApiV3Machines backup_last_inc_size false */
 
-/* polymorph Machine backup_type false */
+/* polymorph postApiV3Machines backup_type false */
 
-/* polymorph Machine business_criticality false */
+/* polymorph postApiV3Machines business_criticality false */
 
-/* polymorph Machine business_notification false */
+/* polymorph postApiV3Machines business_notification false */
 
-/* polymorph Machine business_purpose false */
+/* polymorph postApiV3Machines business_purpose false */
 
-/* polymorph Machine config_instructions false */
+/* polymorph postApiV3Machines config_instructions false */
 
-/* polymorph Machine cores false */
+/* polymorph postApiV3Machines cores false */
 
-/* polymorph Machine created_at false */
+/* polymorph postApiV3Machines created_at false */
 
-/* polymorph Machine deleted_at false */
+/* polymorph postApiV3Machines deleted_at false */
 
-/* polymorph Machine description false */
+/* polymorph postApiV3Machines description false */
 
-/* polymorph Machine diskspace false */
+/* polymorph postApiV3Machines diskspace false */
 
-/* polymorph Machine fqdn false */
+/* polymorph postApiV3Machines fqdn false */
 
-/* polymorph Machine mrtg_url false */
+/* polymorph postApiV3Machines mrtg_url false */
 
-/* polymorph Machine needs_reboot false */
+/* polymorph postApiV3Machines needs_reboot false */
 
-/* polymorph Machine os false */
+/* polymorph postApiV3Machines os false */
 
-/* polymorph Machine os_release false */
+/* polymorph postApiV3Machines os_release false */
 
-/* polymorph Machine pending_security_updates false */
+/* polymorph postApiV3Machines pending_security_updates false */
 
-/* polymorph Machine pending_updates false */
+/* polymorph postApiV3Machines pending_updates false */
 
-/* polymorph Machine pending_updates_package_names false */
+/* polymorph postApiV3Machines pending_updates_package_names false */
 
-/* polymorph Machine pending_updates_sum false */
+/* polymorph postApiV3Machines pending_updates_sum false */
 
-/* polymorph Machine power_feed_a false */
+/* polymorph postApiV3Machines power_feed_a false */
 
-/* polymorph Machine power_feed_b false */
+/* polymorph postApiV3Machines power_feed_b false */
 
-/* polymorph Machine ram false */
+/* polymorph postApiV3Machines ram false */
 
-/* polymorph Machine raw_data_api false */
+/* polymorph postApiV3Machines raw_data_api false */
 
-/* polymorph Machine raw_data_puppetdb false */
+/* polymorph postApiV3Machines raw_data_puppetdb false */
 
-/* polymorph Machine serialnumber false */
+/* polymorph postApiV3Machines serialnumber false */
 
-/* polymorph Machine serviced_at false */
+/* polymorph postApiV3Machines serviced_at false */
 
-/* polymorph Machine severity_class false */
+/* polymorph postApiV3Machines severity_class false */
 
-/* polymorph Machine software false */
+/* polymorph postApiV3Machines software false */
 
-/* polymorph Machine sw_characteristics false */
+/* polymorph postApiV3Machines sw_characteristics false */
 
-/* polymorph Machine switch_url false */
+/* polymorph postApiV3Machines switch_url false */
 
-/* polymorph Machine ucs_role false */
+/* polymorph postApiV3Machines ucs_role false */
 
-/* polymorph Machine unattended_upgrades false */
+/* polymorph postApiV3Machines unattended_upgrades false */
 
-/* polymorph Machine unattended_upgrades_blacklisted_packages false */
+/* polymorph postApiV3Machines unattended_upgrades_blacklisted_packages false */
 
-/* polymorph Machine unattended_upgrades_reboot false */
+/* polymorph postApiV3Machines unattended_upgrades_reboot false */
 
-/* polymorph Machine unattended_upgrades_repos false */
+/* polymorph postApiV3Machines unattended_upgrades_repos false */
 
-/* polymorph Machine unattended_upgrades_time false */
+/* polymorph postApiV3Machines unattended_upgrades_time false */
 
-/* polymorph Machine updated_at false */
+/* polymorph postApiV3Machines updated_at false */
 
-/* polymorph Machine uptime false */
+/* polymorph postApiV3Machines uptime false */
 
-/* polymorph Machine vmhost false */
+/* polymorph postApiV3Machines vmhost false */
 
-// Validate validates this machine
-func (m *Machine) Validate(formats strfmt.Registry) error {
+// Validate validates this post Api v3 machines
+func (m *PostAPIV3Machines) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if len(res) > 0 {
@@ -269,7 +269,7 @@ func (m *Machine) Validate(formats strfmt.Registry) error {
 }
 
 // MarshalBinary interface implementation
-func (m *Machine) MarshalBinary() ([]byte, error) {
+func (m *PostAPIV3Machines) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -277,8 +277,8 @@ func (m *Machine) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *Machine) UnmarshalBinary(b []byte) error {
-	var res Machine
+func (m *PostAPIV3Machines) UnmarshalBinary(b []byte) error {
+	var res PostAPIV3Machines
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

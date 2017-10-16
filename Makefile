@@ -1,5 +1,6 @@
-swagger_doc.json:
-	curl http://localhost:5000/api/v3/swagger_doc.json > swagger_doc.json
+clean:
+	rm -rf client
+	rm -rf models
 
-client: swagger_doc.json
-	swagger generate client -A "idb" -f swagger_doc.json
+client: clean
+	swagger generate client -A "idb" -f swagger.json

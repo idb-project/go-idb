@@ -12,10 +12,10 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// Machine Searches machines with specific software configurations
-// swagger:model Machine
+// PutAPIV3Machines Update a single machine
+// swagger:model putApiV3Machines
 
-type Machine struct {
+type PutAPIV3Machines struct {
 
 	// Architecture
 	Arch string `json:"arch,omitempty"`
@@ -126,7 +126,7 @@ type Machine struct {
 	SeverityClass string `json:"severity_class,omitempty"`
 
 	// software
-	Software MachineSoftware `json:"software"`
+	Software PutAPIV3MachinesSoftware `json:"software"`
 
 	// Software characteristics
 	SwCharacteristics string `json:"sw_characteristics,omitempty"`
@@ -162,104 +162,104 @@ type Machine struct {
 	Vmhost string `json:"vmhost,omitempty"`
 }
 
-/* polymorph Machine arch false */
+/* polymorph putApiV3Machines arch false */
 
-/* polymorph Machine auto_update false */
+/* polymorph putApiV3Machines auto_update false */
 
-/* polymorph Machine backup_brand false */
+/* polymorph putApiV3Machines backup_brand false */
 
-/* polymorph Machine backup_last_diff_run false */
+/* polymorph putApiV3Machines backup_last_diff_run false */
 
-/* polymorph Machine backup_last_diff_size false */
+/* polymorph putApiV3Machines backup_last_diff_size false */
 
-/* polymorph Machine backup_last_full_run false */
+/* polymorph putApiV3Machines backup_last_full_run false */
 
-/* polymorph Machine backup_last_full_size false */
+/* polymorph putApiV3Machines backup_last_full_size false */
 
-/* polymorph Machine backup_last_inc_run false */
+/* polymorph putApiV3Machines backup_last_inc_run false */
 
-/* polymorph Machine backup_last_inc_size false */
+/* polymorph putApiV3Machines backup_last_inc_size false */
 
-/* polymorph Machine backup_type false */
+/* polymorph putApiV3Machines backup_type false */
 
-/* polymorph Machine business_criticality false */
+/* polymorph putApiV3Machines business_criticality false */
 
-/* polymorph Machine business_notification false */
+/* polymorph putApiV3Machines business_notification false */
 
-/* polymorph Machine business_purpose false */
+/* polymorph putApiV3Machines business_purpose false */
 
-/* polymorph Machine config_instructions false */
+/* polymorph putApiV3Machines config_instructions false */
 
-/* polymorph Machine cores false */
+/* polymorph putApiV3Machines cores false */
 
-/* polymorph Machine created_at false */
+/* polymorph putApiV3Machines created_at false */
 
-/* polymorph Machine deleted_at false */
+/* polymorph putApiV3Machines deleted_at false */
 
-/* polymorph Machine description false */
+/* polymorph putApiV3Machines description false */
 
-/* polymorph Machine diskspace false */
+/* polymorph putApiV3Machines diskspace false */
 
-/* polymorph Machine fqdn false */
+/* polymorph putApiV3Machines fqdn false */
 
-/* polymorph Machine mrtg_url false */
+/* polymorph putApiV3Machines mrtg_url false */
 
-/* polymorph Machine needs_reboot false */
+/* polymorph putApiV3Machines needs_reboot false */
 
-/* polymorph Machine os false */
+/* polymorph putApiV3Machines os false */
 
-/* polymorph Machine os_release false */
+/* polymorph putApiV3Machines os_release false */
 
-/* polymorph Machine pending_security_updates false */
+/* polymorph putApiV3Machines pending_security_updates false */
 
-/* polymorph Machine pending_updates false */
+/* polymorph putApiV3Machines pending_updates false */
 
-/* polymorph Machine pending_updates_package_names false */
+/* polymorph putApiV3Machines pending_updates_package_names false */
 
-/* polymorph Machine pending_updates_sum false */
+/* polymorph putApiV3Machines pending_updates_sum false */
 
-/* polymorph Machine power_feed_a false */
+/* polymorph putApiV3Machines power_feed_a false */
 
-/* polymorph Machine power_feed_b false */
+/* polymorph putApiV3Machines power_feed_b false */
 
-/* polymorph Machine ram false */
+/* polymorph putApiV3Machines ram false */
 
-/* polymorph Machine raw_data_api false */
+/* polymorph putApiV3Machines raw_data_api false */
 
-/* polymorph Machine raw_data_puppetdb false */
+/* polymorph putApiV3Machines raw_data_puppetdb false */
 
-/* polymorph Machine serialnumber false */
+/* polymorph putApiV3Machines serialnumber false */
 
-/* polymorph Machine serviced_at false */
+/* polymorph putApiV3Machines serviced_at false */
 
-/* polymorph Machine severity_class false */
+/* polymorph putApiV3Machines severity_class false */
 
-/* polymorph Machine software false */
+/* polymorph putApiV3Machines software false */
 
-/* polymorph Machine sw_characteristics false */
+/* polymorph putApiV3Machines sw_characteristics false */
 
-/* polymorph Machine switch_url false */
+/* polymorph putApiV3Machines switch_url false */
 
-/* polymorph Machine ucs_role false */
+/* polymorph putApiV3Machines ucs_role false */
 
-/* polymorph Machine unattended_upgrades false */
+/* polymorph putApiV3Machines unattended_upgrades false */
 
-/* polymorph Machine unattended_upgrades_blacklisted_packages false */
+/* polymorph putApiV3Machines unattended_upgrades_blacklisted_packages false */
 
-/* polymorph Machine unattended_upgrades_reboot false */
+/* polymorph putApiV3Machines unattended_upgrades_reboot false */
 
-/* polymorph Machine unattended_upgrades_repos false */
+/* polymorph putApiV3Machines unattended_upgrades_repos false */
 
-/* polymorph Machine unattended_upgrades_time false */
+/* polymorph putApiV3Machines unattended_upgrades_time false */
 
-/* polymorph Machine updated_at false */
+/* polymorph putApiV3Machines updated_at false */
 
-/* polymorph Machine uptime false */
+/* polymorph putApiV3Machines uptime false */
 
-/* polymorph Machine vmhost false */
+/* polymorph putApiV3Machines vmhost false */
 
-// Validate validates this machine
-func (m *Machine) Validate(formats strfmt.Registry) error {
+// Validate validates this put Api v3 machines
+func (m *PutAPIV3Machines) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if len(res) > 0 {
@@ -269,7 +269,7 @@ func (m *Machine) Validate(formats strfmt.Registry) error {
 }
 
 // MarshalBinary interface implementation
-func (m *Machine) MarshalBinary() ([]byte, error) {
+func (m *PutAPIV3Machines) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -277,8 +277,8 @@ func (m *Machine) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *Machine) UnmarshalBinary(b []byte) error {
-	var res Machine
+func (m *PutAPIV3Machines) UnmarshalBinary(b []byte) error {
+	var res PutAPIV3Machines
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

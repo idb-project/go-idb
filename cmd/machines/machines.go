@@ -12,6 +12,8 @@ import (
 	"github.com/go-openapi/strfmt"
 
 	idbclient "github.com/idb-project/go-idb/client"
+	"github.com/idb-project/go-idb/client/api"
+	"github.com/idb-project/go-idb/models"
 )
 
 var address = flag.String("address", "localhost:5000", "address of IDB instance")
@@ -35,12 +37,32 @@ func main() {
 
 	client := idbclient.New(trans, strfmt.Default)
 
-	ms, err := client.Machines.GetAPIV3Machines(nil)
+	// Get all machines
+	ms, err := client.API.GetAPIV3Machines(nil)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	for _, m := range ms.Payload {
 		fmt.Println(m.Fqdn)
+	}
+
+	// Create a machine
+	m := &models.Machine{}
+	m.Fqdn = "test0.example.org"
+
+	postParams := api.NewPostAPIV3MachinesParams()
+	postParams.SetMachine(m)
+	_, err = client.API.PostAPIV3Machines(postParams)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Delete a machine
+	deleteParams := api.NewDeleteAPIV3MachinesRfqdnParams()
+	deleteParams.SetRfqdn("test0.example.org")
+	_, err = client.API.DeleteAPIV3MachinesRfqdn(deleteParams)
+	if err != nil {
+		log.Fatal(err)
 	}
 }

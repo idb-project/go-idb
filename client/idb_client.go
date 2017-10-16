@@ -11,13 +11,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/idb-project/go-idb/client/cloud_providers"
-	"github.com/idb-project/go-idb/client/inventories"
-	"github.com/idb-project/go-idb/client/locations"
-	"github.com/idb-project/go-idb/client/machines"
-	"github.com/idb-project/go-idb/client/nics"
-	"github.com/idb-project/go-idb/client/softwares"
-	"github.com/idb-project/go-idb/client/switches"
+	"github.com/idb-project/go-idb/client/api"
 )
 
 // Default idb HTTP client.
@@ -61,19 +55,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *Idb {
 	cli := new(Idb)
 	cli.Transport = transport
 
-	cli.CloudProviders = cloud_providers.New(transport, formats)
-
-	cli.Inventories = inventories.New(transport, formats)
-
-	cli.Locations = locations.New(transport, formats)
-
-	cli.Machines = machines.New(transport, formats)
-
-	cli.Nics = nics.New(transport, formats)
-
-	cli.Softwares = softwares.New(transport, formats)
-
-	cli.Switches = switches.New(transport, formats)
+	cli.API = api.New(transport, formats)
 
 	return cli
 }
@@ -119,19 +101,7 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // Idb is a client for idb
 type Idb struct {
-	CloudProviders *cloud_providers.Client
-
-	Inventories *inventories.Client
-
-	Locations *locations.Client
-
-	Machines *machines.Client
-
-	Nics *nics.Client
-
-	Softwares *softwares.Client
-
-	Switches *switches.Client
+	API *api.Client
 
 	Transport runtime.ClientTransport
 }
@@ -140,18 +110,6 @@ type Idb struct {
 func (c *Idb) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
 
-	c.CloudProviders.SetTransport(transport)
-
-	c.Inventories.SetTransport(transport)
-
-	c.Locations.SetTransport(transport)
-
-	c.Machines.SetTransport(transport)
-
-	c.Nics.SetTransport(transport)
-
-	c.Softwares.SetTransport(transport)
-
-	c.Switches.SetTransport(transport)
+	c.API.SetTransport(transport)
 
 }
